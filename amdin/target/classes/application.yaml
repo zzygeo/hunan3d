@@ -1,0 +1,23 @@
+server:
+  port: 8091
+
+spring:
+  application:
+    name: hunan3d
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://117.72.12.193:3306/hunan3d?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+      username: root
+      password: taoyuting520
+
+  redis:
+    port: 6379
+    database: 0
+    jedis:
+      pool:
+        max-wait: 1000ms
+        max-active: 8 # 最大连接数
+        max-idle: 4 # 最大空闲连接
+        min-idle: 0 # 最小空闲连接
+    password: taoyuting521
