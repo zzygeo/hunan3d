@@ -8,6 +8,7 @@
   </parent>
   <groupId>com.zzy</groupId>
   <artifactId>hunan3d</artifactId>
+  <version>1.0-SNAPSHOT</version>
   <packaging>pom</packaging>
   <modules>
     <module>amdin</module>
@@ -15,14 +16,20 @@
     <module>common</module>
     <module>system</module>
   </modules>
-  <version>1.0-SNAPSHOT</version>
   <name>hunan3d Maven Webapp</name>
+  <url>zzygeo.cn</url>
+  <description>3D平台后台系统</description>
   <properties>
     <java.version>11</java.version>
     <lombok.version>1.18.20</lombok.version>
     <fastjson.version>1.2.76</fastjson.version>
     <jdbc.version>8.0.28</jdbc.version>
     <druid.version>1.1.23</druid.version>
+    <mybatis.version>3.5.6</mybatis.version>
+    <pagehelper.boot.version>1.4.6</pagehelper.boot.version>
+    <swagger.version>3.0.0</swagger.version>
+    <jwt.version>0.9.1</jwt.version>
+    <kaptcha.version>2.3.3</kaptcha.version>
   </properties>
   <dependencies>
     <dependency>
@@ -42,6 +49,20 @@
       <scope>compile</scope>
     </dependency>
 
+    <!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
+    <dependency>
+      <groupId>org.mybatis</groupId>
+      <artifactId>mybatis</artifactId>
+      <version>${mybatis.version}</version>
+    </dependency>
+
+    <!-- pagehelper 分页插件 -->
+    <dependency>
+      <groupId>com.github.pagehelper</groupId>
+      <artifactId>pagehelper-spring-boot-starter</artifactId>
+      <version>${pagehelper.boot.version}</version>
+    </dependency>
+
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
@@ -52,6 +73,38 @@
       <groupId>com.alibaba</groupId>
       <artifactId>fastjson</artifactId>
       <version>${fastjson.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>io.springfox</groupId>
+      <artifactId>springfox-boot-starter</artifactId>
+      <version>${swagger.version}</version>
+      <exclusions>
+        <exclusion>
+          <groupId>io.swagger</groupId>
+          <artifactId>swagger-models</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+    <dependency>
+      <groupId>io.swagger</groupId>
+      <artifactId>swagger-models</artifactId>
+      <version>1.6.2</version>
+    </dependency>
+
+    <!-- Token生成与解析-->
+    <dependency>
+      <groupId>io.jsonwebtoken</groupId>
+      <artifactId>jjwt</artifactId>
+      <version>${jwt.version}</version>
+    </dependency>
+
+    <!-- 验证码 -->
+    <dependency>
+      <groupId>pro.fessional</groupId>
+      <artifactId>kaptcha</artifactId>
+      <version>${kaptcha.version}</version>
     </dependency>
 
     <dependency>
