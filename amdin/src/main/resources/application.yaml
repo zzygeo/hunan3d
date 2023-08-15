@@ -87,6 +87,8 @@ spring:
   # redis配置
   redis:
     port: 6379
+    host: 119.23.150.112
+    password: taoyuting521
     database: 0
     jedis:
       pool:
@@ -94,7 +96,6 @@ spring:
         max-active: 8 # 最大连接数
         max-idle: 4 # 最大空闲连接
         min-idle: 0 # 最小空闲连接
-    password: taoyuting521
 
 # token配置
 token:
