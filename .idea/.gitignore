@@ -7,6 +7,6 @@
 /dataSources/
 /dataSources.local.xml
 
-/target/*
+/**/target/*
 # 忽略word文件
 *.docx
