@@ -1,0 +1,7 @@
+# build tools
+/build/
+**/target/
+
+# IntelliJ IDEA
+.idea
+/admin/**/*dev.yaml
