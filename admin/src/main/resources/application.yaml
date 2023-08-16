@@ -1,3 +1,9 @@
+hunan3d:
+  name: Hunan3d
+  version: 1.0.0
+  copyrightYear: 2023
+  profile: D:/hunan3d/uploadPath
+
 server:
   port: 8091
   servlet:
@@ -54,3 +60,10 @@ mybatis:
   mapperLocations: classpath*:mapper/*Mapper.xml
   # 加载全局的配置文件
   configLocation: classpath:mybatis/mybatis-config.xml
+
+# swagger配置
+swagger:
+  enable: true
+  application-name: ${spring.application.name}
+  application-version: 1.0
+  pathMapping: /
