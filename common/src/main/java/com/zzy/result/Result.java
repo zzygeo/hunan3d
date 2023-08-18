@@ -1,18 +1,24 @@
 package com.zzy.result;
 
 import com.zzy.constant.HttpStatus;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 import java.io.Serializable;
 
 @Data
+@ApiModel(value = "result entity", description = "结果集")
 public class Result<T> implements Serializable {
     private static final Long serialVersionUID = 1L;
     public static final int SUCCESS = HttpStatus.SUCCESS;
     public static final int ERROR = HttpStatus.ERROR;
     public static final int WARN = HttpStatus.WARN;
+    @ApiModelProperty(value = "状态码")
     private int code;
+    @ApiModelProperty(value = "系统消息")
     private String msg;
+    @ApiModelProperty(value = "数据")
     private T data;
 
     public static <T> Result<T> ok() {
