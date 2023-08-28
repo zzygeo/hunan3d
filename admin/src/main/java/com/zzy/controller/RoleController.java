@@ -28,7 +28,7 @@ public class RoleController {
     @PostMapping
     @ApiOperation(value = "添加角色")
     public Result addRole(@RequestBody Role role) {
-        // 判断用户是不是管理员
+        // 菜单权限判断
         // 判断role_key和role_name是否重复
         // 添加角色
         boolean b = roleService.addRole(role);
@@ -38,17 +38,16 @@ public class RoleController {
     @GetMapping
     @ApiOperation(value = "根据角色id查询")
     public Result<Role> selectRoleById(@RequestParam(value = "roleId") Long roleId) {
-        // 判断用户是不是管理员
+        // 菜单权限判断
         // 查询角色
         Role role = roleService.selectById(roleId);
         return Result.ok(role);
     }
 
-    // 分页查询角色
     @ApiOperation(value = "角色分页查询")
     @GetMapping("/page")
     public Paging<Role> page(@RequestParam(value = "page") Integer page, @RequestParam(value = "pageSize") Integer pageSize, String roleName) {
-        // 判断用户是不是管理员
+        // 菜单权限判断
         Page<Role> rolePage = PageHelper.startPage(page, pageSize).doSelectPage(() -> {
             roleService.selectAll(roleName);
         });
@@ -56,12 +55,10 @@ public class RoleController {
         return rolePaging;
     }
 
-    // 删除角色
     @DeleteMapping
     @ApiOperation(value = "根据角色id删除")
     public Result deleteById(@RequestParam(value = "roleId") Long roleId) {
-        // 判断是不是管理员
-        // 若是，则执行删除
+        // 菜单权限判断
         boolean b = roleService.deleteById(roleId);
         return b ? Result.ok() : Result.fail();
     }
@@ -70,7 +67,7 @@ public class RoleController {
     @PostMapping("/updateById")
     @ApiOperation(value = "根据角色id更新")
     public Result updateById(@RequestBody Role role) {
-        // 判断是不是管理员, 若是管理员则允许进行更新操作
+        // 菜单权限判断
         boolean b = roleService.updateRole(role);
         return b ? Result.ok() : Result.fail();
     }
