@@ -40,7 +40,7 @@ public class SwaggerConfig {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("标题：hunan3d后台系统_接口文档")
+                .title("标题：model后台系统_接口文档")
                 .description("供开发人员阅读、测试使用。")
                 .contact(new Contact(hunan3dConfig.getName(),  "https://zzygeo.cn", "zzy_geo@163.com"))
                 .version("版本号:" + hunan3dConfig.getVersion())
