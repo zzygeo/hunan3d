@@ -16,7 +16,7 @@
     <module>common</module>
     <module>system</module>
   </modules>
-  <name>hunan3d Maven Webapp</name>
+  <name>model Maven Webapp</name>
   <url>zzygeo.cn</url>
   <description>3D平台后台系统</description>
   <properties>
@@ -50,23 +50,49 @@
     </dependency>
 
     <!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
-    <dependency>
+    <!--<dependency>
       <groupId>org.mybatis</groupId>
       <artifactId>mybatis</artifactId>
       <version>${mybatis.version}</version>
-    </dependency>
+    </dependency>-->
 
     <!-- pagehelper 分页插件 -->
-    <dependency>
+    <!--<dependency>
       <groupId>com.github.pagehelper</groupId>
       <artifactId>pagehelper-spring-boot-starter</artifactId>
       <version>${pagehelper.boot.version}</version>
-    </dependency>
+    </dependency>-->
 
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
       <version>${lombok.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.baomidou</groupId>
+      <artifactId>mybatis-plus-boot-starter</artifactId>
+      <version>3.5.2</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.baomidou</groupId>
+      <artifactId>mybatis-plus-generator</artifactId>
+      <version>3.5.2</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/com.github.jeffreyning/mybatisplus-plus -->
+    <!-- 解决mybatis-plus联合组件问题 -->
+    <dependency>
+      <groupId>com.github.jeffreyning</groupId>
+      <artifactId>mybatisplus-plus</artifactId>
+      <version>1.7.4-RELEASE</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.freemarker</groupId>
+      <artifactId>freemarker</artifactId>
+      <version>2.3.31</version>
     </dependency>
 
     <dependency>
