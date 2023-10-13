@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
  * </p>
  *
  * @author zzy
- * @since 2023-10-11
+ * @since 2023-10-12
  */
 @Service
 public class RoleMenuServiceImpl extends MppServiceImpl<RoleMenuMapper, RoleMenu> implements IRoleMenuService {

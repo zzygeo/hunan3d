@@ -9,7 +9,7 @@ import com.github.jeffreyning.mybatisplus.service.IMppService;
  * </p>
  *
  * @author zzy
- * @since 2023-10-11
+ * @since 2023-10-12
  */
 public interface IOrganizationService extends IMppService<Organization> {
 

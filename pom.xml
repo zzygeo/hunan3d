@@ -46,22 +46,7 @@
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
-      <scope>compile</scope>
     </dependency>
-
-    <!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
-    <!--<dependency>
-      <groupId>org.mybatis</groupId>
-      <artifactId>mybatis</artifactId>
-      <version>${mybatis.version}</version>
-    </dependency>-->
-
-    <!-- pagehelper 分页插件 -->
-    <!--<dependency>
-      <groupId>com.github.pagehelper</groupId>
-      <artifactId>pagehelper-spring-boot-starter</artifactId>
-      <version>${pagehelper.boot.version}</version>
-    </dependency>-->
 
     <dependency>
       <groupId>org.projectlombok</groupId>

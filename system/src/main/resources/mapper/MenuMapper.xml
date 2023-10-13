@@ -5,6 +5,10 @@
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.zzy.entity.Menu">
         <id column="menu_id" property="menuId" />
+        <result column="create_time" property="createTime" />
+        <result column="create_by" property="createBy" />
+        <result column="update_time" property="updateTime" />
+        <result column="update_by" property="updateBy" />
         <result column="menu_name" property="menuName" />
         <result column="parent_id" property="parentId" />
         <result column="order" property="order" />
@@ -15,16 +19,16 @@
         <result column="status" property="status" />
         <result column="visible" property="visible" />
         <result column="perms" property="perms" />
-        <result column="create_time" property="createTime" />
-        <result column="create_by" property="createBy" />
-        <result column="update_time" property="updateTime" />
-        <result column="update_by" property="updateBy" />
         <result column="remark" property="remark" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        menu_id, menu_name, parent_id, order, path, component, query, menu_type, status, visible, perms, create_time, create_by, update_time, update_by, remark
+        create_time,
+        create_by,
+        update_time,
+        update_by,
+        menu_id, menu_name, parent_id, order, path, component, query, menu_type, status, visible, perms, remark
     </sql>
 
 </mapper>

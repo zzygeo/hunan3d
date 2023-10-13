@@ -21,28 +21,32 @@ public class Result<T> implements Serializable {
     @ApiModelProperty(value = "数据")
     private T data;
 
-    public static <T> Result<T> ok() {
+    public static <T> Result<T> success() {
         return build(SUCCESS, "操作成功", null);
     }
 
-    public static <T> Result<T> ok(T data) {
+    public static <T> Result<T> success(T data) {
         return build(SUCCESS, "操作成功", data);
     }
 
-    public static <T> Result<T> ok(String msg, T data) {
+    public static <T> Result<T> success(String msg, T data) {
         return build(SUCCESS, msg, data);
     }
 
-    public static <T> Result<T> fail() {
+    public static <T> Result<T> error() {
         return build(ERROR, "操作失败", null);
     }
 
-    public static <T> Result<T> fail(T data) {
+    public static <T> Result<T> error(T data) {
         return build(ERROR, "操作失败", data);
     }
 
-    public static <T> Result<T> fail(String msg, T data) {
+    public static <T> Result<T> error(String msg, T data) {
         return build(ERROR, msg, data);
+    }
+
+    public static <T> Result<T> fail(String msg) {
+        return build(ERROR, msg, null);
     }
 
     public static <T> Result<T> warn(String msg) {

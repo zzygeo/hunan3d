@@ -5,19 +5,23 @@
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.zzy.entity.Organization">
         <id column="organization_id" property="organizationId" />
-        <result column="organization_name" property="organizationName" />
-        <result column="status" property="status" />
-        <result column="del_flag" property="delFlag" />
         <result column="create_time" property="createTime" />
         <result column="create_by" property="createBy" />
         <result column="update_time" property="updateTime" />
         <result column="update_by" property="updateBy" />
+        <result column="organization_name" property="organizationName" />
+        <result column="status" property="status" />
+        <result column="del_flag" property="delFlag" />
         <result column="remark" property="remark" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        organization_id, organization_name, status, del_flag, create_time, create_by, update_time, update_by, remark
+        create_time,
+        create_by,
+        update_time,
+        update_by,
+        organization_id, organization_name, status, del_flag, remark
     </sql>
 
 </mapper>

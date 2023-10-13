@@ -16,7 +16,7 @@ import springfox.documentation.spring.web.plugins.Docket;
 @Configuration
 public class SwaggerConfig {
     @Autowired
-    private Hunan3dConfig hunan3dConfig;
+    private ModelConfig modelConfig;
     @Value("${swagger.enable}")
     private boolean enable;
     @Value("${swagger.pathMapping}")
@@ -42,8 +42,8 @@ public class SwaggerConfig {
         return new ApiInfoBuilder()
                 .title("标题：model后台系统_接口文档")
                 .description("供开发人员阅读、测试使用。")
-                .contact(new Contact(hunan3dConfig.getName(),  "https://zzygeo.cn", "zzy_geo@163.com"))
-                .version("版本号:" + hunan3dConfig.getVersion())
+                .contact(new Contact(modelConfig.getName(),  "https://zzygeo.cn", "zzy_geo@163.com"))
+                .version("版本号:" + modelConfig.getVersion())
                 .build();
     }
 }

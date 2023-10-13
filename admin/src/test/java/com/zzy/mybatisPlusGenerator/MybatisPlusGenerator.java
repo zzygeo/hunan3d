@@ -11,6 +11,7 @@ import com.baomidou.mybatisplus.generator.fill.Column;
 import com.github.jeffreyning.mybatisplus.base.MppBaseMapper;
 import com.github.jeffreyning.mybatisplus.service.IMppService;
 import com.github.jeffreyning.mybatisplus.service.MppServiceImpl;
+import com.zzy.entity.BaseEntity;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.*;
@@ -38,7 +39,7 @@ public class MybatisPlusGenerator {
         String mapperXmlPath = PROJECT_ROOT_PATH + "/system/src/main/resources/mapper";
         String servicePath = BASE_PATH + "/service";
         String serviceImplPath = BASE_PATH + "/service/impl";
-        String controllerPath = PROJECT_ROOT_PATH + "/admin/src/main/java/com/zzy/controller";
+//        String controllerPath = PROJECT_ROOT_PATH + "/admin/src/main/java/com/zzy/controller";
 
 
         FastAutoGenerator.create(URL, USERNAME, PASSWORD)
@@ -64,7 +65,7 @@ public class MybatisPlusGenerator {
                         .mapper("mapper")
                         .service("service")
                         .serviceImpl("service.impl")
-                        .controller("controller")
+//                        .controller("controller")
                         .other("other")
                         // 阶段2：所有文件的生成路径配置
                         .pathInfo(
@@ -80,7 +81,7 @@ public class MybatisPlusGenerator {
                                     // service层接口实现类的保存路径
                                     put(OutputFile.serviceImpl, serviceImplPath);
                                     // 控制类的保存路径
-                                    put(OutputFile.controller, controllerPath);
+//                                    put(OutputFile.controller, controllerPath);
                                 }}
                         )
                 )
@@ -89,7 +90,7 @@ public class MybatisPlusGenerator {
                         .entityBuilder()
                                 .fileOverride()
                         // 设置父类。会在生成的实体类名后：extends BaseEntity
-//                         .superClass(BaseEntity.class)
+                         .superClass(BaseEntity.class)
                         // 禁用生成 serialVersionUID。（不推荐禁用）
                         // .disableSerialVersionUID()
                         // 开启生成字段常量。
@@ -127,7 +128,7 @@ public class MybatisPlusGenerator {
                         // 会在实体类的该字段上追加注解[@TableField(value = "update_time", fill = FieldFill.INSERT_UPDATE)]
                         .addTableFills(new Column("update_time", FieldFill.UPDATE))
                         // 全局主键类型。如果MySQL主键设置为自增，则不需要设置此项。
-                        // .idType(IdType.AUTO)
+//                         .idType(IdType.AUTO)
                         // 格式化文件名称。
                         // 如果不设置，如表[sys_user]的实体类名是[SysUser]。设置成下面这样，将是[SysUserEntity]
                         //.formatFileName("%sEntity")
@@ -171,15 +172,15 @@ public class MybatisPlusGenerator {
                         // .formatServiceImplFileName("%sServiceImpl")
 
                         // 阶段4：Controller策略配置
-                        .controllerBuilder()
+//                        .controllerBuilder()
                         // 设置父类。
                         // 会集成此父类。
                         // .superClass(BaseController.class)
                         // 开启生成 @RestController 控制器
                         // 会在控制类中加[@RestController]注解。
-                        .enableRestStyle()
+//                        .enableRestStyle()
                         // 开启驼峰转连字符
-                        .enableHyphenStyle()
+//                        .enableHyphenStyle()
 
                         // 最后：构建
                         .build()
