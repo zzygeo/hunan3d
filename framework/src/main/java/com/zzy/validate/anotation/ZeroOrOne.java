@@ -7,7 +7,7 @@ import javax.validation.Constraint;
 import javax.validation.Payload;
 
 @Documented
-@Target({ElementType.FIELD})
+@Target({ElementType.FIELD, ElementType.PARAMETER})
 @Constraint(validatedBy = ZeroOrOneValidator.class)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface ZeroOrOne {

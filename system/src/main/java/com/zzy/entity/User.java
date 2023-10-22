@@ -15,7 +15,7 @@ import lombok.experimental.Accessors;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author zzy
@@ -66,5 +66,7 @@ public class User extends BaseEntity {
     @TableField("login_time")
     private LocalDateTime loginTime;
 
-
+    @ApiModelProperty(value = "密码", hidden = true)
+    @TableField("password")
+    private String password;
 }

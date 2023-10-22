@@ -13,7 +13,7 @@ public class ZeroOrOneValidator implements ConstraintValidator<ZeroOrOne, String
 
     @Override
     public boolean isValid(String value, ConstraintValidatorContext context) {
-        if (value.equals("1") || value.equals("0")) {
+        if (value == null || value.equals("1") || value.equals("0")) {
             return true;
         } else {
             return false;

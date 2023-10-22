@@ -14,11 +14,11 @@ import java.time.LocalDateTime;
 @Setter
 @Accessors(chain = true)
 public class BaseEntity implements Serializable {
-    @JsonFormat(pattern = "yyyy-MM-dd hh:MM:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @TableField(value = "create_time", fill = FieldFill.INSERT)
     private LocalDateTime createTime;
     @TableField(value = "update_time", fill = FieldFill.UPDATE)
-    @JsonFormat(pattern = "yyyy-MM-dd hh:MM:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime updateTime;
     @TableField("create_by")
     private String createBy;

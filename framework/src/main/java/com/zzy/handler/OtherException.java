@@ -16,12 +16,12 @@ public class OtherException {
     @ExceptionHandler(RuntimeException.class)
     public Result runtimeExceptionHandler(RuntimeException ex) {
         log.error("运行时异常：{}", ex.getMessage(), ex);
-        return Result.error(ex.getMessage());
+        return Result.error(ex.getMessage(), null);
     }
 
     @ExceptionHandler(Exception.class)
     public Result exceptionHandler(Exception ex) {
         log.error("其他异常：{}", ex.getMessage(), ex);
-        return Result.error(ex.getMessage());
+        return Result.error(ex.getMessage(), null);
     }
 }

@@ -6,14 +6,15 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.Accessors;
+import org.springframework.validation.annotation.Validated;
 
 import javax.validation.constraints.*;
 
-@ApiModel(value = "role dto")
+@ApiModel(value = "角色添加DTO")
 @Getter
 @Setter
 @Accessors(chain = true)
-public class BaseDTO {
+public class RoleAddDTO {
     @ApiModelProperty(value = "角色名称", required = true)
     @NotEmpty
     @Size(max = 32)
@@ -33,5 +34,6 @@ public class BaseDTO {
     private String status;
 
     @ApiModelProperty("备注")
+    @Size(max = 128)
     private String remark;
 }
