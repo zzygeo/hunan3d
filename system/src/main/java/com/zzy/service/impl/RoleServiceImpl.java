@@ -30,7 +30,7 @@ public class RoleServiceImpl extends MppServiceImpl<RoleMapper, Role> implements
     @Override
     public Page<Role> getList(int pageNum, int pageSize, String roleName, String status) {
         LambdaQueryWrapper<Role> wrapper = new LambdaQueryWrapper<>();
-        wrapper.eq(roleName != null, Role::getRoleName, roleName);
+        wrapper.like(roleName != null, Role::getRoleName, roleName);
         wrapper.eq(status != null, Role::getStatus, status);
         Page<Role> rolePage = new Page<>(pageNum, pageSize);
         Page<Role> page = this.page(rolePage, wrapper);

@@ -71,7 +71,7 @@ public class RoleController {
 
     @GetMapping("/{roleId}")
     @ApiOperation(value = "根据roleId查询角色")
-    public Result getRoleById(@PathVariable @Positive Long roleId) {
+    public Result getRoleById(@PathVariable @Positive Long roleId, String name) {
         Role role = roleService.getRoleById(roleId);
         return role != null ? Result.success("查询成功", role) : Result.error("查询失败", null);
     }

@@ -33,6 +33,9 @@ user:
     maxRetryCount: 5
     # 密码锁定时间（默认10分钟）
     lockTime: 10
+  uploadDir: "D:\\data\\upload\\"
+  potreeConvert: "D:\\app\\PotreeConverter_windows_x64\\PotreeConverter.exe"
+  potreeDir: "D:\\data\\potree\\"
 
 # spring配置
 spring:
@@ -43,6 +46,10 @@ spring:
       matching-strategy: ant_path_matcher
   profiles:
     active: dev # 数据库配置
+  servlet:
+    multipart:
+      max-file-size: 1000MB
+      max-request-size: 1000MB
 # token配置
 token:
   # 令牌自定义标识
